@@ -7,6 +7,6 @@ export class MemoryServiceService {
 
   constructor() { }
   getMemories() {
-    return ['Memory one', 'Memory two', 'Memory three'];
+    return [];
   }
 }
