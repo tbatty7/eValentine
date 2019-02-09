@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MemoryServiceService} from './services/memory-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'the eValentine website';
+  public memories = []
+  constructor(
+    private memoryService: MemoryServiceService
+  ) { }
+
+  ngOnInit(): void {
+
+    this.memories = this.memoryService.getMemories();
+
+  }
 }

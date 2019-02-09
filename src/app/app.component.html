@@ -5,9 +5,7 @@
   </h1>
   <img src="assets/heart.png" alt="hearts">
 <ul>
-  <li class="quote">I love how kind you are</li>
-  <li class="quote">I love how forgiving you are</li>
-  <li class="quote">I love how funny you are</li>
+  <li class="quote" *ngFor="let memory of memories">{{memory}}</li>
 </ul>
 </div>
 
