@@ -19,13 +19,20 @@ describe('AppComponent', () => {
   it(`should have as title 'eValentine'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('eValentine');
+    expect(app.title).toEqual('the eValentine website');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to eValentine!');
+    expect(compiled.querySelector('.title').textContent).toContain('Welcome to the eValentine website!');
+  });
+
+  it('should display quotes', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelectorAll('.quote').length).toBe(3);
   });
 });
