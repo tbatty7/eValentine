@@ -1,12 +1,28 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class="container">
+  <div style="text-align:center">
   <h1 class="title">
     Welcome to {{ title }}!
   </h1>
   <img src="assets/heart.png" alt="hearts">
-<ul>
-  <li class="quote" *ngFor="let memory of memories">{{memory}}</li>
-</ul>
+  </div>
+  <ul>
+    <li class="quote" *ngFor="let memory of memories">{{memory}}</li>
+  </ul>
+  <h2>Memory Capturer</h2>
+  <div class="row">
+    <div class="col-xs-6 col-md-4">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="enter thought here" id="txtSearch">
+        <div class="input-group-btn">
+          <button class="btn btn-primary" type="button">
+            <span class="glyphicon glyphicon-ok"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 

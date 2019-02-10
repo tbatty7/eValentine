@@ -8,14 +8,12 @@ import {MemoryServiceService} from './services/memory-service.service';
 })
 export class AppComponent {
   title = 'the eValentine website';
-  public memories = []
+  public memories = [];
   constructor(
     private memoryService: MemoryServiceService
   ) { }
 
   ngOnInit(): void {
-
     this.memories = this.memoryService.getMemories();
-
   }
 }
