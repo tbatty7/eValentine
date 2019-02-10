@@ -7,11 +7,18 @@ import {MemoryServiceService} from './services/memory-service.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  task: string;
+  tasks = [];
   title = 'the eValentine website';
   public memories = [];
   constructor(
     private memoryService: MemoryServiceService
   ) { }
+
+  onClick() {
+    this.tasks.push({name: this.task});
+    this.task = '';
+  }
 
   ngOnInit(): void {
     this.memories = this.memoryService.getMemories();

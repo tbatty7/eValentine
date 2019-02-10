@@ -1,11 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {MemoryServiceService} from './services/memory-service.service';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   let memoryService: MemoryServiceService;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule
+      ],
       declarations: [
         AppComponent
       ],
@@ -42,5 +46,15 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelectorAll('.quote').length).toBe(3);
+  });
+
+  it('should submit quotes', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.task = 'thought';
+    app.onClick();
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelectorAll('.memory').length).toBe(1);
   });
 });

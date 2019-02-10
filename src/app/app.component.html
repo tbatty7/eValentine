@@ -6,21 +6,25 @@
   <img src="assets/heart.png" alt="hearts">
   </div>
   <ul>
-    <li class="quote" *ngFor="let memory of memories">{{memory}}</li>
+    <li class="list-group-item quote" *ngFor="let memory of memories">{{memory}}</li>
   </ul>
   <h2>Memory Capturer</h2>
   <div class="row">
     <div class="col-xs-6 col-md-4">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="enter thought here" id="txtSearch">
+        <input type="text" [(ngModel)]="task" class="form-control" placeholder="enter thought here" id="txtSearch" />
         <div class="input-group-btn">
-          <button class="btn btn-primary" type="button">
+          <button class="btn btn-primary" type="button" (click)="onClick()">
             <span class="glyphicon glyphicon-ok"></span>
           </button>
         </div>
       </div>
     </div>
   </div>
+  <br>
+  <ul>
+    <li *ngFor="let task of tasks" class="list-group-item memory">{{task.name}}</li>
+  </ul>
 </div>
 
 
